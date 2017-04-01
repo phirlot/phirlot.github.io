@@ -1,0 +1,757 @@
+/*
+ *                        ___
+ *                       /\_ \
+ *  _____     ___     ___\//\ \      __
+ * /\ '__`\  / __`\  / __`\\ \ \   /'__`\
+ * \ \ \_\ \/\ \_\ \/\ \_\ \\_\ \_/\  __/
+ *  \ \ ,__/\ \____/\ \____//\____\ \____\
+ *   \ \ \/  \/___/  \/___/ \/____/\/____/
+ *    \ \_\
+ *     \/_/
+ *
+ * Designed, built, and released under MIT license by @mdo. Learn more at
+ * https://github.com/poole/poole.
+ */
+
+
+/*
+ * Contents
+ *
+ * Font declarations
+ * Body resets
+ * Custom type
+ * Messages
+ * Container
+ * Masthead
+ * Navigation bar
+ * Posts and pages
+ * Pagination
+ * Blog post archival list
+ * Index page
+ * Text selection color
+ * MathJax
+ * Reverse layout
+ * Themes
+ */
+
+ /*
+  * Font declarations
+  *
+  */
+@font-face {
+    font-family: "Casual Hardcore";
+    src: url("fonts/Casual Hardcore.woff") format('woff');
+}
+
+/*
+ * Body resets
+ *
+ * Update the foundational and global aspects of the page.
+ */
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 16px;
+  color: white;
+  line-height: 1.5;
+}
+@media (min-width: 38em) {
+  html {
+    font-size: 20px;
+  }
+}
+
+body {
+  background: black;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+
+/* No `:visited` state is required by default (browsers will use `a`) */
+a {
+  border-bottom: 1px dotted #a5a5a5;
+  color: inherit;
+  text-decoration: none;
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+a strong {
+  color: inherit;
+}
+/* `:focus` is linked to `:hover` for basic accessibility */
+a:hover,
+a:focus {
+  border-bottom: 1px solid #303030;
+}
+a.archive-title {
+  border-bottom: none;
+}
+
+a.archive-title:hover {
+  background: rgba(253, 233, 202, 0.3);
+  -moz-transition-property: background;
+  -webkit-transition-property: background;
+  transition-property: background;
+  -moz-transition-duration: 0s;
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  border-radius: 8px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+h1 {
+  font-size: 2.25rem;
+}
+h2 {
+  font-size: 1.5em; /* 30px */
+  line-height: 1em; /* 30px */
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+h3 {
+  font-size: 1.25em; /* 25px */
+  line-height: 1.2em; /* 30px */
+  margin-top: 1.2em;
+  margin-bottom: 0;
+}
+h4, h5, h6 {
+  font-size: 1em; /* 20px */
+  line-height: 1.5em; /* 30px */
+  margin-top: 1.5em;
+  margin-bottom: 0;
+}
+
+/* Body text */
+p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+strong {
+  /*color: #303030;*/
+}
+
+
+/* Lists */
+ul, ol, dl {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+ul {
+  list-style-type: square;
+}
+
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-bottom: .5rem;
+}
+
+/* Misc */
+hr {
+  position: relative;
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #fff;
+}
+
+abbr {
+  font-size: 85%;
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+}
+abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted #e5e5e5;
+}
+
+/* Code */
+code,
+pre {
+  font-family: monospace;
+}
+code {
+  padding: .1rem;
+  font-size: 85%;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+}
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: .8rem;
+  line-height: 1.4;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f9f9f9;
+}
+pre code {
+  padding: 0;
+  font-size: 100%;
+  color: inherit;
+  background-color: transparent;
+}
+
+/* Pygments via Jekyll */
+.highlight {
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+.highlight pre {
+  margin-bottom: 0;
+}
+
+/* Gist via GitHub Pages */
+.gist .gist-file {
+  font-family: monospace !important;
+}
+.gist .markdown-body {
+  padding: 15px;
+}
+.gist pre {
+  padding: 0;
+  background-color: transparent;
+}
+.gist .gist-file .gist-data {
+  font-size: .8rem !important;
+  line-height: 1.4;
+}
+.gist code {
+  padding: 0;
+  color: inherit;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+/* Quotes */
+blockquote {
+  margin-top: 1.5rem;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0rem 1rem;
+  margin-bottom: 1.5rem;
+  color: #737373;
+  border-left: .25rem solid #e5e5e5;
+}
+blockquote h1 {
+  color: #737373;
+  margin-top: 0rem;
+}
+blockquote h2 {
+  color: #737373;
+  margin-top: 0rem;
+}
+blockquote h3 {
+  color: #737373;
+  margin-top: 0rem;
+}
+blockquote h4 {
+  color: #737373;
+  margin-top: 0rem;
+}
+blockquote h5 {
+  color: #737373;
+  margin-top: 0rem;
+}
+blockquote h6 {
+  color: #737373;
+  margin-top: 0rem;
+}
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 30em) {
+  blockquote {
+    padding-left: 1.25rem;
+    padding-right: 4.5rem;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  margin: 1.5rem auto 1.5rem;
+  border-radius: 5px;
+}
+
+/* Tables */
+table {
+  margin-bottom: 1rem;
+  width: 100%;
+  /*border: 1px solid #e5e5e5;*/
+  border-collapse: collapse;
+}
+td,
+th {
+  padding: .25rem .5rem;
+  /*border: 1px solid #e5e5e5;*/
+}
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+  background-color: #f9f9f9;
+}
+
+
+/*
+ * Custom type
+ *
+ * Extend paragraphs with `.lead` for larger introductory text.
+ */
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+
+/*
+ * Messages
+ *
+ * Show alert messages to users. You may add it to single elements like a `<p>`,
+ * or to a parent if there are multiple elements to show.
+ */
+
+.message {
+  position:relative;
+  padding: 1.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  color: #737373;
+  background-color: #E6E6E6;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.message a {
+  color: inherit;
+}
+
+.message p:last-of-type {
+  margin-bottom: 0rem;
+}
+
+.message-close {
+  color: #A5A5A5;
+  position: absolute;
+  top: 0.05rem;
+  right: 1rem;
+}
+
+.message-close-icon {
+  border-bottom: none;
+  font-size: 1.8rem;
+}
+
+
+/*
+ * Container
+ *
+ * Center the page content.
+ */
+
+.container {
+  max-width: 38rem;
+  padding-left:  1rem;
+  padding-right: 1rem;
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+
+/*
+ * Masthead
+ *
+ * Super small header above the content for site name and short description.
+ */
+
+.masthead {
+  margin-top: 1.5rem;
+  margin-bottom: 4.5rem;
+  letter-spacing: 0.0825rem;
+}
+.masthead-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom:0.75rem;
+  font-size:1rem;
+}
+.masthead-title a {
+  border-bottom: none;
+}
+/*.masthead-title small {
+  font-size: 75%;
+  font-weight: 400;
+  letter-spacing: 0;
+}*/
+@media (min-width: 30em) {
+  .masthead {
+    text-align: right;
+  }
+  .masthead-title {
+    float: left;
+  }
+}
+@media (max-width: 30em) {
+  .masthead-title {
+    line-height: 1.5;
+  }
+}
+
+/*
+ * Navigation bar
+ *
+ */
+ .nav {
+   padding-left: 0;
+   margin-bottom: 0;
+   list-style: none;
+ }
+ .nav li {
+   display: inline-block;
+   letter-spacing:1.25pt;
+ }
+ .nav li + li {
+   margin-left: 1rem;
+ }
+ .nav a {
+   border-bottom: none;
+   color: inherit;
+ }
+
+
+
+/*
+ * Posts and pages
+ *
+ * Each post is wrapped in `.post` and is used on default and post layouts. Each
+ * page is wrapped in `.page` and is only used on the page layout.
+ */
+
+.page,
+.post {
+  margin-bottom: 4em;
+}
+
+/* Blog post or page title */
+.page-title,
+.post-title,
+.post-title a {
+  line-height: 1.333333333;
+  margin-bottom: 0rem;
+}
+.page-title,
+.post-title {
+  margin-top: 0;
+}
+
+/* Meta data line below post title */
+.post-date {
+  display: block;
+  margin-bottom: 3rem;
+  color: #CDCDCD;
+}
+
+/* Related posts */
+.related {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid #eee;
+}
+.related-posts {
+  padding-left: 0;
+  list-style: none;
+}
+.related-posts h3 {
+  margin-top: 0;
+}
+.related-posts li small {
+  font-size: 75%;
+  color: #999;
+}
+.related-posts li a:hover {
+  color: #268bd2;
+  text-decoration: none;
+}
+.related-posts li a:hover small {
+  color: inherit;
+}
+
+
+/*
+ * Pagination
+ *
+ * Super lightweight (HTML-wise) blog pagination. `span`s are provide for when
+ * there are no more previous or next posts to show.
+ */
+
+.pagination {
+  overflow: hidden; /* clearfix */
+  margin-left: -1rem;
+  margin-right: -1rem;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  color: #ccc;
+  text-align: center;
+}
+
+/* Pagination items can be `span`s or `a`s */
+.pagination-item {
+  display: block;
+  padding: 1rem;
+  border: 1px solid #eee;
+}
+.pagination-item:first-child {
+  margin-bottom: -1px;
+}
+
+/* Only provide a hover state for linked pagination items */
+a.pagination-item:hover {
+  background-color: #f5f5f5;
+}
+
+@media (min-width: 30em) {
+  .pagination {
+    margin: 3rem 0;
+  }
+  .pagination-item {
+    float: left;
+    width: 50%;
+  }
+  .pagination-item:first-child {
+    margin-bottom: 0;
+    border-top-left-radius:    4px;
+    border-bottom-left-radius: 4px;
+  }
+  .pagination-item:last-child {
+    margin-left: -1px;
+    border-top-right-radius:    4px;
+    border-bottom-right-radius: 4px;
+  }
+}
+
+/*
+ * Blog post archival list
+ *
+ */
+ 
+.archive-date {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.archive-item {
+  margin-bottom: 1rem;
+  overflow: auto; /* clearfix */
+}
+
+@media (min-width: 30rem) {
+  .archive-date {
+    float: right;
+    margin-left: 1rem;
+  }
+  .archive-item {
+    margin-bottom: 1.5rem;
+  }
+}
+
+
+/*
+ * Index page stlying
+ *
+ */
+h1.home-title {
+  font-family: "Casual Hardcore";
+  margin-top: 3vh;
+  margin-bottom:0;
+  line-height:7vw;
+  letter-spacing:0.1em;
+  font-size:10vw;
+  text-align:center;
+}
+
+#index-photo {
+  margin-top:3vh;
+  margin-bottom:2vh;
+}
+
+h2.social-media-link {
+  font-family: "Casual Hardcore";
+  text-align:center;
+  font-size:2.75rem;
+  letter-spacing:0.1em;
+  margin-top:1rem;
+  margin-bottom:1rem;
+}
+h2.social-media-link a {
+  border-bottom:none;
+  
+}
+h2.social-media-link a:hover {
+    color: #4bf999;
+}
+
+.hide {
+   position: absolute !important;
+   top: -9999px !important;
+   left: -9999px !important;
+}
+
+.this-will-not-be-read {
+   display: none !important;
+}
+
+#contact-form {
+  margin-top:0.75em;
+}
+
+input {
+    margin-bottom: 0.5em;
+    font-size: 0.8em;
+    font-family: 'proxima-nova-soft', sans-serif;
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 0.9em;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    line-height: normal;
+    vertical-align: baseline;
+    user-select: text;
+    cursor: auto;
+    text-rendering: auto;
+   letter-spacing: normal;
+   word-spacing: normal;
+   text-transform: none;
+   text-indent: 0px;
+   text-shadow: none;
+   display: inline-block;
+   text-align: start;
+   -webkit-writing-mode: horizontal-tb;
+   font: 11px system-ui;
+}
+
+textarea, input {
+  background-color:black;
+  background:black;
+  color:white;
+  border-radius: 10px;
+  font-family:Tahoma, sans-serif;
+  font-size: 0.8em;
+    border: 1px solid #ddd;
+    padding: 0.9em 0.9em;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    overflow: auto;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    flex-direction: column;
+    resize: auto;
+    cursor: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+        -webkit-writing-mode: horizontal-tb;
+}
+
+input:focus { 
+    outline:none;
+    border-color:#4bf999;
+    box-shadow:0 0 20px #4bf999;
+}
+
+textarea:focus { 
+    outline:none;
+    border-color:#4bf999;
+    box-shadow:0 0 20px #4bf999;
+}
+
+
+button, a.button {
+  letter-spacing:0.1em;
+  border-radius: 5px;
+  cursor:pointer;
+    font-size: 1em;
+    margin-top:0.5em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 2px solid #white;
+    color: white;
+    background: transparent;
+    line-height: 1em;
+    padding: 0.6em 0.9em;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  color:#4bf999;
+  border-color: #4bf999;
+}
+
+
+/*
+ * Text-selection color
+ *
+ */
+ ::selection {
+   background: #4bf999; /* WebKit/Blink Browsers */
+ }
+ ::-moz-selection {
+   background: #4bf999; /* Gecko Browsers */
+ }
+ 
+ /*
+  * MathJax
+  *
+  */
+.MathJax {
+  font-size: 94% !important;
+}
+
+/*
+ * Footnotes
+ *
+ */
+sup a {
+ border-bottom: none;
+}
+
+.reversefootnote {
+  border-bottom: none;
+}
+
+.footnotes ol {
+  padding-left: 1rem;
+}

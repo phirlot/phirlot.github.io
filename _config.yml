@@ -1,0 +1,30 @@
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Phil Wright
+tagline:          
+url:              http://www.phirlot.com
+paginate:         1
+baseurl:          /
+author:
+  name:           Phil Wright
+  url:            https://www.phirlot.com
+  email:          
+twitter:          phirlot
+description:      Gamer. YouTuber. Role model? Sex symbol.
+markdown:         kramdown
+kramdown:
+  input:          GFM
+  smart_quotes:   ["lsquo", "rsquo", "ldquo", "rdquo"]
+
+# Custom vars
+version:          1.0.0
+github:
+  repo:           https://github.com/phirlot/phirlot.github.io
+
+
+# Ruby gems
+gems:
+  - jekyll-sitemap
+  - jekyll-paginate

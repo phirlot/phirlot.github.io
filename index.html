@@ -1,0 +1,56 @@
+---
+layout: default
+title: Home
+---
+
+<h1 class="home-title">Phil Wright</h1>
+<img id="index-photo" src="/uploads/index/phil.jpg" width="100%"  alt="Phil Wright">
+<div style="float: left; width: 50%;">
+  <h2 class="social-media-link"><a href="https://www.youtube.com/channel/UCEW1MURjY4j-Vw0ywJ4qFdQ">YouTube</a></h2>
+</div>
+<div style="float: left; width: 50%;">
+  <h2 class="social-media-link"><a href="https://twitter.com/phirlot">Twitter</a></h2>
+</div>
+<div style="float: left; width: 50%;">
+  <h2 class="social-media-link"><a href="https://www.instagram.com/phirlot2/">Instagram</a></h2>
+</div>
+<div style="float: left; width: 50%;">
+  <h2 class="social-media-link"><a href="https://www.facebook.com/phirlot/">Facebook</a></h2>
+</div>
+<div style="float: left; width: 50%;">
+  <h2 class="social-media-link"><a href="https://phirlot.tumblr.com/">Tumblr</a></h2>
+</div>
+<div style="float: left; width: 50%;">
+  <h2 class="social-media-link"><a id="contact-button" href="#">Contact</a></h2>
+</div>
+
+<div id="contact-form" class="hide" style="float:left; width:100%">
+  <form method="POST" action="http://formspree.io/contactphirlot@gmail.com">
+    <input type="email" name="email" placeholder="Your email">
+    <textarea name="message" placeholder="Your message"></textarea>
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<script>
+var $button = $('#contact-button'),
+$form   = $('#contact-form'),
+visible = false;
+
+$button.click(function(){
+  if ( visible ) {
+  $form.slideUp('fast',function(){
+    $form.addClass('hide')
+         .slideDown(0);
+  });
+  } else {
+  $form.slideUp(0,function(){
+    $form.removeClass('hide')
+         .slideDown('fast');
+  });
+  $('html, body').animate({scrollTop: $(document).height()}, 'slow');
+}
+visible = ! visible;
+});
+
+</script>
