@@ -4,12 +4,12 @@ permalink:        pretty
 # Setup
 title:            Phil Wright
 tagline:          
-url:              http://www.phirlot.com
+url:              phirlot.github.io
 paginate:         1
 baseurl:          /
 author:
   name:           Phil Wright
-  url:            https://www.phirlot.com
+  url:            phirlot.github.io
   email:          
 twitter:          phirlot
 description:      Gamer. YouTuber. Role model? Sex symbol.
