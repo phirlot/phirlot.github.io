@@ -67,11 +67,21 @@ html {
   color: white;
   line-height: 1.5;
 }
-@media (min-width: 38em) {
-  html {
-    font-size: 20px;
-  }
-}
+
+@media all {html {font-size: 24px;}}
+@media all and (max-width:1000px){html {font-size: 24px;}}
+@media all and (max-width:960px){html {font-size: 23px;}}
+@media all and (max-width:920px){html {font-size: 22px;}}
+@media all and (max-width:880px){html {font-size: 21px;}}
+@media all and (max-width:840px){html {font-size: 20px;}}
+@media all and (max-width:800px){html {font-size: 19px;}}
+@media all and (max-width:760px){html {font-size: 18px;}}
+@media all and (max-width:720px){html {font-size: 17px;}}
+@media all and (max-width:680px){html {font-size: 16px;}}
+@media all and (max-width:640px){html {font-size: 16px;}}
+@media all and (max-width:600px){html {font-size: 16px;}}
+@media all and (max-width:560px){html {font-size: 16px;}}
+@media all and (max-width:520px){html {font-size: 16px;}}
 
 body {
   background: black;
@@ -586,11 +596,11 @@ a.pagination-item:hover {
  */
 h1.home-title {
   font-family: "Casual Hardcore";
-  margin-top: 3vh;
+  margin-top: 1rem;
   margin-bottom:0;
-  line-height:7vw;
+  line-height:7.25rem;
   letter-spacing:0.1em;
-  font-size:10vw;
+  font-size:7rem;
   text-align:center;
 }
 
@@ -602,7 +612,7 @@ h1.home-title {
 h2.social-media-link {
   font-family: "Casual Hardcore";
   text-align:center;
-  font-size:5vw;
+  font-size:3rem;
   letter-spacing:0.1em;
   margin-top:1rem;
   margin-bottom:1rem;
