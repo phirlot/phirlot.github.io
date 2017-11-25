@@ -68,9 +68,9 @@ html {
   line-height: 1.5;
 }
 
-@media all {html {font-size: 20px;}}
-@media all and (max-width:1000px){html {font-size: 20px;}}
-@media all and (max-width:960px){html {font-size: 19px;}}
+@media all {html {font-size: 18px;}}
+@media all and (max-width:1000px){html {font-size: 18px;}}
+@media all and (max-width:960px){html {font-size: 18px;}}
 @media all and (max-width:920px){html {font-size: 18px;}}
 @media all and (max-width:880px){html {font-size: 17px;}}
 @media all and (max-width:840px){html {font-size: 16px;}}
@@ -606,7 +606,7 @@ h1.home-title {
 }
 
 #index-photo {
-  margin-top:3vh;
+  margin-top:0.5vh;
   margin-bottom:5vh;
   padding-left:1rem;
   padding-right:1rem;
@@ -617,6 +617,7 @@ h2.social-media-link {
   font-family: "Casual Hardcore";
   text-align:center;
   font-size:3rem;
+  text-transform:uppercase;
   letter-spacing:0.1em;
   margin-top:1rem;
   margin-bottom:1rem;
