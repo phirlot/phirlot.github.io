@@ -624,10 +624,24 @@ h2.social-media-link {
 }
 h2.social-media-link a {
   border-bottom:none;
-  
 }
 h2.social-media-link a:hover {
     color: #4bf999;
+}
+
+@media all and (min-width:1000px){
+  h2.social-media-link {
+    margin-top:0rem;
+    margin-bottom:1rem;
+  }
+
+  #index-photo {
+    margin-top:0.5vh;
+    margin-bottom:3vh;
+    padding-left:2rem;
+    padding-right:2rem;
+    z-index:0;
+  }
 }
 
 .hide {
