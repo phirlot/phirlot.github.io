@@ -596,17 +596,21 @@ a.pagination-item:hover {
  */
 h1.home-title {
   font-family: "Casual Hardcore";
+  color:black;
   margin-top: 1rem;
   margin-bottom:0;
-  line-height:6.25rem;
+  line-height:0.1rem;
   letter-spacing:0.1em;
-  font-size:6rem;
+  font-size:1px;
   text-align:center;
 }
 
 #index-photo {
   margin-top:3vh;
-  margin-bottom:2vh;
+  margin-bottom:5vh;
+  padding-left:1rem;
+  padding-right:1rem;
+  z-index:0;
 }
 
 h2.social-media-link {
@@ -616,6 +620,7 @@ h2.social-media-link {
   letter-spacing:0.1em;
   margin-top:1rem;
   margin-bottom:1rem;
+  z-index:1;
 }
 h2.social-media-link a {
   border-bottom:none;
