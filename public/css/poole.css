@@ -39,8 +39,8 @@
   *
   */
 @font-face {
-    font-family: "Homenaje";
-    src: url("fonts/Homenaje.woff") format('woff');
+    font-family: "homenaje";
+    src: url("fonts/homenaje.woff") format('woff');
 }
 
 /* Font license  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -150,7 +150,7 @@ body {
 }
 
 html {
-  font-family: "Homenaje",  "Helvetica", "Segoe UI", sans-serif;
+  font-family: "homenaje",  "Helvetica", "Segoe UI", sans-serif;
   font-size: 16px;
   color: white;
   line-height: 1.5;
