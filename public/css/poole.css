@@ -172,7 +172,7 @@ html {
 @media all and (max-width:520px){html {font-size: 12px;}}
 
 body {
-  background: black;
+  background: #448ccb;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
